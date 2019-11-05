@@ -1,0 +1,18 @@
+PORTA 1125
+
+Servidor: aguarda uma conexão com o cliente e, a partir de então, uma das funcionalidades podem ser
+requisitada.
+
+Cliente: solicita uma funcionalidade e fornece as informações do servidor
+de destino (IP e Porta).
+
+Interface gráfica: lado cliente
+
+/*Funcionalidades*/
+• Criar diretório;
+• Remover diretório;
+• Listar conteúdo de diretório;
+• Enviar arquivo;
+• Remover arquivo.
+-------------------------------------
+
