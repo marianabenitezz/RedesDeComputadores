@@ -93,7 +93,7 @@ public class Server {
 					String nomeDiretorio = in.readUTF();
 
 					// criar diretorio
-					 diretorio = new File(caminhoDir+"/" + nomeDiretorio);
+					 diretorio = new File(caminhoDir+"\\" + nomeDiretorio);
 					diretorio.mkdir();
 
 					// printa nova lista de diretorios
@@ -177,6 +177,7 @@ public class Server {
 					break;
 
 				}
+
 
 			}
 		} catch (IOException e) {

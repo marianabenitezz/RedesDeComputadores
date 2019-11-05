@@ -106,7 +106,7 @@ public class Client {
 				String dir = tc.next();
 
 				if (dir.equalsIgnoreCase("c"))
-					dir = "c:/servidor/";
+					dir = "c:\\servidor\\";
 
 				File f;
 				FileInputStream file;
@@ -115,6 +115,7 @@ public class Client {
 					f = new File("c:/cliente/lab00.pdf");
 					file = new FileInputStream("c:/cliente/lab00.pdf");
 				} else {
+					caminho= caminho.replace("\\", "/");
 					f = new File(caminho);
 					file = new FileInputStream(caminho);
 				}
@@ -204,7 +205,7 @@ public class Client {
 		try {
 
 			plot();
-      	
+       	
 
 		} catch (IOException e) {
 			System.out.println("Erro no cliente " + e);
