@@ -13,8 +13,6 @@ import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import util.Arquivo;
-import util.Status;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

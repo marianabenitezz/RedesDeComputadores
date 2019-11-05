@@ -14,9 +14,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import util.Arquivo;
-import util.Status;
-
 public class Server {
 	private ServerSocket sever;
 	private static String caminhoDir = "c:/servidor";
@@ -119,7 +116,7 @@ public class Server {
 					in = new DataInputStream(ser.getInputStream());
 					String nomeDir = in.readUTF();
 					System.out.println("Arquivo: " + nomeDir);
-					File arquivoPraDelecao = new File(nomeDir);
+					File arquivoPraDelecao = new File(caminhoDir+"/" + nomeDir);
 					if (arquivoPraDelecao.isFile()) {
 						arquivoPraDelecao.delete();
 						System.out.println("Arquivo deletado");
@@ -139,7 +136,7 @@ public class Server {
 					nomeDir = in.readUTF();
 					System.out.println("Diretorio: " + nomeDir);
 					server.close();
-					File dirToDelete = new File(nomeDir);
+					File dirToDelete = new File(caminhoDir+"/" + nomeDir);
 					if (dirToDelete.isFile()) {
 						deleteArquivos(dirToDelete);
 						System.out.println("Diretorio deletado");
