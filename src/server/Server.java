@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 
 public class Server {
 	private ServerSocket sever;
-	private static String caminhoDir = "c:/servidor";
+	private static String caminhoDir = "c:\\servidor";
 
 	private void criarServerSocket(int porta) throws IOException {
 		sever = new ServerSocket(porta);
@@ -34,14 +34,7 @@ public class Server {
 		Files.walk(dir).forEach(Files -> {
 			b.append(Files.toString() + "\n");
 		});
-//		String a="";
-//		File file = new File(diretorio);
-//		File afile[] = file.listFiles();
-//		int i = 0;
-//		for (int j = afile.length; i < j; i++) {
-//			File arquivos = afile[i];
-//			a+=arquivos.getName()+"\n";
-//		}
+
 		return b.toString();
 	}
 
@@ -53,7 +46,10 @@ public class Server {
 			for (int i = 0; i < files.length; i++) {
 				deleteArquivos(files[i]);
 			}
+			
 		}
+		if(listaDelecao.exists())
+		listaDelecao.delete();
 	}
 
 	private void fechaSocket(Socket s) throws IOException {
@@ -116,7 +112,7 @@ public class Server {
 					in = new DataInputStream(ser.getInputStream());
 					String nomeDir = in.readUTF();
 					System.out.println("Arquivo: " + nomeDir);
-					File arquivoPraDelecao = new File(caminhoDir+"/" + nomeDir);
+					File arquivoPraDelecao = new File(caminhoDir+"\\" + nomeDir);
 					if (arquivoPraDelecao.isFile()) {
 						arquivoPraDelecao.delete();
 						System.out.println("Arquivo deletado");
@@ -134,10 +130,10 @@ public class Server {
 					System.out.println();
 					in = new DataInputStream(ser.getInputStream());
 					nomeDir = in.readUTF();
-					System.out.println("Diretorio: " + nomeDir);
+					System.out.println("Diretorio: " + caminhoDir+"\\" + nomeDir);
 					server.close();
-					File dirToDelete = new File(caminhoDir+"/" + nomeDir);
-					if (dirToDelete.isFile()) {
+					File dirToDelete = new File(caminhoDir+"\\" + nomeDir);
+					if (dirToDelete.exists()) {
 						deleteArquivos(dirToDelete);
 						System.out.println("Diretorio deletado");
 					} else
@@ -181,17 +177,6 @@ public class Server {
 					break;
 
 				}
-//			//visualizarArquivos();
-//			Server server = new Server();
-//			System.out.println("Aguardadndo conexao");
-//			
-//			server.criarServerSocket(1125);
-//			System.out.println(" cliente conectado");
-//			while (true) {
-//				Socket socket = server.esperaConexao();
-//				server.trataConexao(socket);
-//				System.out.println("cliente finalizado");
-//			}
 
 			}
 		} catch (IOException e) {

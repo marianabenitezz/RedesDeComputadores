@@ -204,57 +204,7 @@ public class Client {
 		try {
 
 			plot();
-//			// cria conexão entre cliente e servidor
-//
-//			// cria streams I/O
-//			ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream());
-//
-//			System.out.println("Digite o caminho do arquivo, ex.: c:/cliente/lab00.pdf");
-//			String caminho = tc.next();
-////        	File f = new File("c:/cliente/lab00.pdf");
-////        	f.getName();
-//			FileInputStream file;
-//
-//			if (caminho.equals("c"))
-//				file = new FileInputStream("c:/cliente/lab00.pdf");
-//			else
-//				file = new FileInputStream(caminho);
-//
-//			byte[] buffer = new byte[4096];
-//			System.out.println("Enviando arquivo...");
-//			while (true) {
-//				int tamanho = file.read(buffer);
-//				if (tamanho == -1)
-//					break;
-//				output.write(buffer, 0, tamanho);
-//			}
-
-//        	
-//        	
-//        	Arquivo arq = new Arquivo("Hello");
-//        	arq.setStatus(Status.SOLICITACAO);
-//        	arq.setParam("nome", "Eduardo");
-//        	arq.setParam("sobrenome", "Silva");
-//        	
-//        	output.writeObject(arq);
-//        	output.flush(); //envio do final da mensagem
-//        	
-//        	System.out.println("Mensagem "+arq+" enviada!");
-//        	
-//        	arq =(Arquivo) input.readObject();
-//        	
-//        	System.out.println("Resposta "+arq);
-//        	if(arq.getStatus() == Status.OK) {
-//        		String resposta = (String) arq.getParam("mensagem"); /**/
-//        		System.out.println("Mensagem: \n"+resposta);
-//        	}else {
-//        		System.out.println("Erro: "+ arq.getStatus());
-//        	}
-//        	
-//        	input.close();
-//        	output.close();
-//        	cliente.close();
-//        	
+      	
 
 		} catch (IOException e) {
 			System.out.println("Erro no cliente " + e);
