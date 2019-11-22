@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 
 public class Server {
 	private ServerSocket sever;
-	private static String caminhoDir = "c:\\servidor";
+	private static String caminhoDir = "servidor";
 
 	private void criarServerSocket(int porta) throws IOException {
 		sever = new ServerSocket(porta);
@@ -26,7 +26,7 @@ public class Server {
 		Socket socket = sever.accept();
 		return socket;
 	}
-
+	
 	public static String visualizarArquivos() throws IOException {
 		StringBuilder b = new StringBuilder();
 		b.append("");
@@ -142,7 +142,7 @@ public class Server {
 					novaLista = visualizarArquivos();
 					dos.writeUTF(novaLista);
 					dos.flush();
-					server.close();
+					server.close(); 
 					break;
 
 				case "enviarArquivo":
@@ -181,7 +181,6 @@ public class Server {
 
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

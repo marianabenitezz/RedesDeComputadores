@@ -137,8 +137,8 @@ public class Client {
 				dos = new DataOutputStream(cliente.getOutputStream());
 				dos.writeUTF(dir);
 				dos.flush();
+				
 				ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream());
-
 				byte[] buffer = new byte[4096];
 				System.out.println("Enviando arquivo...");
 				while (true) {
@@ -205,7 +205,6 @@ public class Client {
 		try {
 
 			plot();
-       	
 
 		} catch (IOException e) {
 			System.out.println("Erro no cliente " + e);
